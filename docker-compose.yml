@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: hello-world-app
+    volumes:
+      - ./app:/app/app
+    ports:
+      - "8000:8000"
