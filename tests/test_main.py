@@ -8,11 +8,11 @@ class TestHelloWorld(unittest.TestCase):
 
     def test_get_hello_message(self):
         """Test that the hello message function returns the expected string."""
-        self.assertEqual(get_hello_message(), "Hello, World!")
+        self.assertEqual(get_hello_message(), "Hello, Worlddd!")
 
     def test_main_function(self):
         """Test that the main function returns the expected string."""
-        self.assertEqual(main(), "Hello, World!")
+        self.assertEqual(main(), "Hello, Worlddd!")
 
 
 if __name__ == "__main__":
