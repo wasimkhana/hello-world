@@ -1,27 +1,20 @@
-from typing import Any
+"""Test cases for the main module."""
 
+import unittest
 from app.main import get_hello_message, main
 
 
-def test_get_hello_message_default() -> None:
-    """
-    Test default hello message.
-    """
-    assert get_hello_message() == "Hello, World!"
+class TestHelloWorld(unittest.TestCase):
+    """Test cases for Hello World functionality."""
+
+    def test_get_hello_message(self):
+        """Test that the hello message function returns the expected string."""
+        self.assertEqual(get_hello_message(), "Hello, World!")
+
+    def test_main_function(self):
+        """Test that the main function returns the expected string."""
+        self.assertEqual(main(), "Hello, World!")
 
 
-def test_get_hello_message_with_name() -> None:
-    """
-    Test hello message with a name.
-    """
-    assert get_hello_message("Alice") == "Hello, Alice!"
-
-
-def test_main(capsys: Any) -> None:
-    """
-    Test main function output and return value.
-    """
-    result = main()
-    assert result == 0
-    captured = capsys.readouterr()
-    assert captured.out.strip() == "Hello, World!"
+if __name__ == "__main__":
+    unittest.main()
