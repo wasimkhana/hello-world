@@ -21,6 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt  # Use requirements-dev.txt
           pip install types-setuptools  # Add type stubs
+          pip install pytest pytest-cov  # Add pytest and coverage
           
       - name: Get changed files
         id: changed-files
@@ -59,7 +60,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt  # Use requirements-dev.txt
           pip install types-setuptools  # Add type stubs
+          pip install pytest pytest-cov  # Add pytest and coverage
           
+      - name: Run Tests with Coverage
+        run: |
+          PYTHONPATH=. pytest --cov=app tests/ --cov-report=xml:coverage.xml
+        
       - name: Run Mypy
         run: |
           mypy --config-file mypy.ini --install-types --non-interactive .
