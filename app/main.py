@@ -1,16 +1,13 @@
-from typing import Optional
-
-
-def get_hello_message(name: Optional[str] = None) -> str:
-    if name:
-        return f"Hello, {name}!"
+def get_hello_message() -> str:
+    """Return a hello world message."""
     return "Hello, World!"
 
 
-def main() -> int:
+def main() -> str:
+    """Main function to print the hello message."""
     message = get_hello_message()
     print(message)
-    return 0
+    return message
 
 
 if __name__ == "__main__":
